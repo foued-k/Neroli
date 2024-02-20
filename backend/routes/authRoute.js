@@ -5,7 +5,6 @@ import {
   testController,
 } from "../controllers/authController.js";
 import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
-import { requireSignIn } from "./../middlewares/authMiddleware";
 
 const router = express.Router();
 
