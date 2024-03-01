@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Layout from "../../components/Layout/Layout";
+import Layout from "./../../components/Layout/Layout";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -9,9 +9,10 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [answer, setAnswer] = useState("");
+
   const navigate = useNavigate();
 
-  //form function
+  // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -29,22 +30,23 @@ const ForgotPassword = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error("Registration Failed");
+      toast.error("Something went wrong");
     }
   };
   return (
     <Layout title={"Forgot Password - Neroli"}>
-      <div className="form-container">
+      <div className="form-container ">
         <form onSubmit={handleSubmit}>
-          <h4 className="title">Reset Password</h4>
+          <h4 className="title">RESET PASSWORD</h4>
+
           <div className="mb-3">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="form-control"
-              id="exampleInputEmail"
-              placeholder="Enter Your Email"
+              id="exampleInputEmail1"
+              placeholder="Enter Your Email "
               required
             />
           </div>
@@ -54,8 +56,8 @@ const ForgotPassword = () => {
               value={answer}
               onChange={(e) => setAnswer(e.target.value)}
               className="form-control"
-              id="exampleInputEmail"
-              placeholder="What is your favorite sport ?"
+              id="exampleInputEmail1"
+              placeholder="Enter Your favorite Sport Name "
               required
             />
           </div>
@@ -72,7 +74,7 @@ const ForgotPassword = () => {
           </div>
 
           <button type="submit" className="btn btn-primary">
-            Reset
+            RESET
           </button>
         </form>
       </div>

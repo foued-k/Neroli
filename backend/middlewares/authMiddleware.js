@@ -22,7 +22,7 @@ export const isAdmin = async (req, res, next) => {
     if (user.role !== 1) {
       return res
         .status(401)
-        .send({ success: false, message: "unauthorized access" });
+        .send({ success: false, message: "Unauthorized Access" });
     } else {
       next();
     }
@@ -30,6 +30,6 @@ export const isAdmin = async (req, res, next) => {
     console.log(error);
     res
       .status(401)
-      .send({ success: false, error, message: "error in admin middleware" });
+      .send({ success: false, error, message: "Error in admin middleware" });
   }
 };
